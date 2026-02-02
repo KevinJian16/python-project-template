@@ -1,0 +1,23 @@
+[project]
+name = "{{PROJECT_NAME}}"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+# 常用规则集合：E/F(基础错误) + I(import排序) + UP(现代化语法) + B(常见bug风险)
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # 行长度交给 black 处理
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
